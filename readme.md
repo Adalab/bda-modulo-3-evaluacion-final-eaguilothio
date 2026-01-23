@@ -174,14 +174,14 @@ Describe el **perfil del cliente** dentro del programa de fidelización:
 
 ### Manipulación y análisis de datos
 
-- **pandas** → carga, limpieza y análisis de datos tabulares  
+- **pandas** → trabajar con datos en tablas (DataFrames).  
 - **numpy** → cálculos numéricos y manejo de valores faltantes (`NaN`)  
 - **os** → gestión de rutas y carga de archivos  
 
 ### Visualización
 
-- **matplotlib** → gráficos personalizables  
-- **seaborn** → visualizaciones estadísticas basadas en matplotlib  
+- **matplotlib** → crea gráficos con mucho control sobre cada detalle.
+- **seaborn** → crea gráficos más sencillos que matplotlib, aunque ofrece menos control.  
 
 
 
