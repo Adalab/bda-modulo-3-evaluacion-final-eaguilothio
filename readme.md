@@ -164,10 +164,15 @@ Obtener una visión general del comportamiento de las variables numéricas y cat
 **Objetivo**  
 Detectar patrones y tendencias mediante representaciones gráficas.
 
-**Gráficas principales**
-- Barplot → categoría + numérica; usar horizontal si hay muchas categorías o nombres largos
-- Scatterplot  → numérica + numérica; cada punto = un dato, ver correlación o dispersión
-- Pie chart → categoría → proporción del total; ideal para ver distribuciones relativas, no para comparar valores exactos.
+**Resumen de Gráficas Principales**
+
+Más habitual: Barplot (categoría + numérica)
+- Barplot de barras horizontales: usar si hay muchas categorías o nombres largos
+- Barplot de barras agrupadas: varias barras juntas por categoría, cada barra representa una subcategoría (generalmente usando hue en seaborn).
+
+Otras presentes:
+- Scatterplot (numérica + numérica); cada punto = un dato, ver correlación o dispersión
+- Pie chart (1 categoría → proporción del total); ideal para ver distribuciones relativas, no para comparar valores exactos.
 
 **Hallazgos relevantes**
 
