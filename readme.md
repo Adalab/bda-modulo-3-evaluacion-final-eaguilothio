@@ -164,7 +164,12 @@ Obtener una visión general del comportamiento de las variables numéricas y cat
 **Objetivo**  
 Detectar patrones y tendencias mediante representaciones gráficas.
 
-**Principales hallazgos**
+**Gráficas principales**
+- Barplot → categoría + numérica; usar horizontal si hay muchas categorías o nombres largos
+- Scatterplot  → numérica + numérica; cada punto = un dato, ver correlación o dispersión
+- Pie chart → categoría → proporción del total; ideal para ver distribuciones relativas, no para comparar valores exactos.
+
+**Hallazgos relevantes**
 
 - Fuerte estacionalidad:
   - Picos de reservas en verano (junio–agosto) y en diciembre.
