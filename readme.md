@@ -2,223 +2,186 @@
 
 ## Análisis del perfil de clientes y su comportamiento dentro de una Aerolínea
 
-**Autor:** eaguilothio
+**Autor:** eaguilothio  
 
 ---
 
-## Tabla de Contenidos
+## 📑 Tabla de Contenidos
 
-1. [Descripción del Proyecto](#descripción-del-proyecto)  
-2. [Fuentes de Datos](#fuentes-de-datos)  
-3. [Fases del Análisis](#fases-del-análisis)  
-   1. [Fase 1 — Exploración Inicial](#fase-1--exploración-inicial)  
-   2. [Fase 1 — Limpieza y Preparación de Datos](#fase-1--limpieza-y-preparación-de-datos)  
-   3. [Integración de Datos](#integración-de-datos)  
-   4. [Fase 2 — Análisis Estadístico Descriptivo](#fase-2--análisis-estadístico-descriptivo)  
-   5. [Fase 3 — Visualización de Datos](#fase-3--visualización-de-datos)  
-   6. [Fase 4 — Evaluación de Diferencias por Nivel Educativo](#fase-6--evaluación--de-- diferencias--significativas)  
-4. [Estructura del Repositorio](#estructura-del-repositorio)  
-5. [Librerías Principales](#librerías-principales)
+1. [Descripción del Proyecto](#1-descripción-del-proyecto)  
+2. [Fuentes de Datos](#2-fuentes-de-datos)  
+   - [Customer Flight Activity.csv](#21-customer-flight-activitycsv)  
+   - [Customer Loyalty History.csv](#22-customer-loyalty-historycsv)  
+3. [Fases del Análisis](#3-fases-del-análisis)  
+   1. [Fase 1 — Exploración y Limpieza de Datos](#31-fase-1--exploración-y-limpieza-de-datos)  
+   2. [Integración de Datos](#32-integración-de-datos)  
+   3. [Fase 2 — Análisis Estadístico Descriptivo](#33-fase-2--análisis-estadístico-descriptivo)  
+   4. [Fase 3 — Visualización de Datos](#34-fase-3--visualización-de-datos)  
+   5. [Fase 4 — Evaluación de Diferencias por Nivel Educativo](#35-fase-4--evaluación-de-diferencias-por-nivel-educativo)  
+4. [Estructura del Repositorio](#4-estructura-del-repositorio)  
+5. [Librerías Principales](#5-librerías-principales)  
 
 ---
 
-## Descripción del Proyecto
+## 1. Descripción del Proyecto
 
 Proyecto de **análisis de datos** enfocado en comprender el **perfil de los clientes y su comportamiento** dentro de un programa de fidelización de una aerolínea.
 
-El objetivo principal es **explorar, limpiar, integrar y analizar** distintas fuentes de datos para **extraer conclusiones relevantes** sobre los patrones de vuelo, el uso del programa de fidelización y las características de los clientes.
+**Objetivo principal:**  
+Explorar, limpiar, integrar y analizar distintas fuentes de datos para **extraer conclusiones relevantes**.
+ 
+---
+
+## 2. Fuentes de Datos
+
+### 2.1 Customer Flight Activity.csv
+
+Analiza la **actividad de vuelo mensual** de cada cliente:
+
+- Número de vuelos realizados  
+- Viajes acompañados  
+- Uso y acumulación de puntos  
+- Evolución del comportamiento a lo largo del tiempo  
+
+> Contiene múltiples registros por cliente.
 
 ---
 
-## Fuentes de Datos
+### 2.2 Customer Loyalty History.csv
 
-El análisis se basa en dos datasets complementarios:
+Describe el **perfil del cliente** dentro del programa de fidelización:
 
-### 1. Customer Flight Activity.csv
+- Lugar de residencia  
+- Nivel educativo  
+- Nivel de ingresos  
+- Situación personal  
+- Información sobre la relación con el programa  
 
-Este archivo permite analizar la **actividad de vuelo mensual** de cada cliente, incluyendo:
-- Número de vuelos realizados
-- Viajes acompañados
-- Uso y acumulación de puntos
-- Evolución del comportamiento a lo largo del tiempo
-
-Se trata de un dataset con múltiples registros por cliente.
-
-### 2. Customer Loyalty History.csv
-
-Este archivo describe el **perfil del cliente** dentro del programa de fidelización:
-- Lugar de residencia
-- Nivel educativo
-- Nivel de ingresos
-- Situación personal
-- Información relacionada con su relación con el programa
-
-Cada cliente aparece una única vez en este dataset.
+> Cada cliente aparece **una sola vez**.
 
 ---
 
-## Fases del Análisis
+## 3. Fases del Análisis
 
-### Fase 1 — Exploración Inicial
+### 3.1 Fase 1 — Exploración y Limpieza de Datos
 
-**Objetivo**  
-Comprender qué datos se tienen disponibles, su estructura, formato y posibles problemas antes de iniciar el análisis.
+#### Exploración Inicial
 
-**Qué se hizo**
+**Objetivo:** Comprender los datos, su estructura y posibles problemas.
 
-- **Revisión de dimensiones**
-  - *Customer Flight Activity*:
-    - Filas: **405.624**
-    - Columnas: **10**
-    - Muchas filas (actividad mensual) y pocas columnas.
-  - *Customer Loyalty History*:
-    - Filas: **16.737**
-    - Columnas: **16**
-    - Una fila por cliente y mayor detalle de variables.
+- **Revisión de dimensiones:**  
+  - *Customer Flight Activity*: 405.624 filas × 10 columnas  
+  - *Customer Loyalty History*: 16.737 filas × 16 columnas  
 
-- **Inspección de tipos de datos**
-  - *Flight*: mayoritariamente numéricas.
-  - *Loyalty*: mezcla de variables numéricas y categóricas.
+- **Inspección de tipos de datos:**  
+  - Flight → mayormente numéricas  
+  - Loyalty → mezcla de numéricas y categóricas  
 
-- **Búsqueda de valores nulos**
-  - *Flight*: no presenta valores nulos.
-  - *Loyalty*: nulos informativos en `salary` (ingresos no declarados) y nulos en variables de cancelación.
+- **Valores nulos:**  
+  - Flight → ninguno  
+  - Loyalty → `salary` y algunas variables de cancelación  
 
-- **Detección de duplicados**
-  - *Flight*: pequeño porcentaje de filas duplicadas.
-  - *Loyalty*: no presenta duplicados.
+- **Duplicados:**  
+  - Flight → pequeño porcentaje  
+  - Loyalty → ninguno  
 
-- **Detección de valores anómalos**
-  - Se detecta salario negativo, atribuible a un error de signo.
+- **Valores anómalos:**  
+  - Salarios negativos → error de signo  
 
----
+#### Limpieza y Preparación de Datos
 
-### Fase 2 — Limpieza y Preparación de Datos
+**Objetivo:** Garantizar coherencia y consistencia.
 
-**Objetivo**  
-Garantizar la coherencia y consistencia de los datos antes del análisis y la integración.
-
-**Qué se hizo**
-
-- Conversión de `loyalty_number` a string en ambos datasets.
-- Corrección del valor negativo en `salary` mediante su valor absoluto.
-- Eliminación de filas duplicadas en el dataset de actividad de vuelo.
-- Homogeneización de nombres de columnas para mantener un formato uniforme.
+- Ambos → Conversión de `loyalty_number` a string  
+- Homogeneización de nombres de columnas (snake_case)
+- Loyalty → Corrección de `salary` (valores absolutos)  
+- Flight →  Eliminación de duplicados en actividad de vuelo  
 
 ---
 
-### Fase 3 — Integración de Datos
+### 3.2 Integración de Datos
 
-**Objetivo**  
-Unir la información de comportamiento de vuelo con el perfil del cliente.
+**Objetivo:** Unir comportamiento de vuelo y perfil del cliente.
 
-**Método**
-
-- Se utiliza `merge` como método de combinación.
-- Tipo de combinación: **LEFT JOIN**, usando *Customer Flight Activity* como dataset principal.
-
-**Justificación**
-- Se conservan todas las observaciones de actividad de vuelo.
-- Se añade información del perfil del cliente cuando existe.
-- No se requieren perfiles sin actividad de vuelo para este análisis.
+- **Método:** `merge` → **LEFT JOIN** con Customer Flight Activity como base  
+- **Justificación:**  
+  - Se conservan todas las observaciones de vuelo  
+  - Se agrega perfil de cliente cuando existe  
+  - No se requieren perfiles sin actividad  
 
 ---
 
-### Fase 4 — Análisis Estadístico Descriptivo
+### 3.3 Fase 2 — Análisis Estadístico Descriptivo
 
-**Objetivo**  
-Obtener una visión general del comportamiento de las variables numéricas y categóricas.
+**Objetivo:** Visión general de variables numéricas y categóricas.
 
 #### Variables numéricas
 
-- **Total Flights**
-  - Media muy superior a la mediana → asimetría positiva.
-  - Alta dispersión y presencia de outliers.
-  - La mayoría de clientes vuela poco; unos pocos concentran muchos vuelos.
+| Variable        | Observaciones |
+|-----------------|---------------|
+| Total Flights   | Media > mediana → asimetría positiva, alta dispersión y outliers |
+| CLV             | Media > mediana → heterogeneidad, valores máximos elevados |
+| Salary          | Media ≈ mediana → distribución simétrica, algunos valores altos |
 
-- **CLV**
-  - Media superior a la mediana → clientes de alto valor elevan la media.
-  - Gran heterogeneidad.
-  - Valores máximos muy elevados.
-
-- **Salary**
-  - Media y mediana similares → distribución casi simétrica.
-  - Variabilidad moderada.
-  - Presencia de algunos salarios altos.
-
-**Conclusión**  
-✔ Existen variables muy desiguales (`total_flights`, `CLV`) y otras más estables (`salary`).
+✔ Conclusión: algunas variables muy desiguales (`total_flights`, `CLV`), otras más estables (`salary`).
 
 #### Variables categóricas
 
-- Análisis mediante `describe(include='object')`.
-- Tablas de frecuencia absoluta y relativa (%) para país, género, nivel educativo, etc.
+- Análisis mediante `describe(include='object')`  
+- Tablas de frecuencia absoluta y relativa para país, género, nivel educativo, etc.
 
-**Conclusión**  
-✔ Las variables categóricas permiten segmentar y entender la composición de la clientela.
-
----
-
-### Fase 5 — Visualización de Datos
-
-**Objetivo**  
-Detectar patrones y tendencias mediante representaciones gráficas.
-
-**Resumen de Gráficas Principales**
-
-Más habitual: Barplot (categoría + numérica)
-- Barplot de barras horizontales: usar si hay muchas categorías o nombres largos
-- Barplot de barras agrupadas: varias barras juntas por categoría, cada barra representa una subcategoría (generalmente usando hue en seaborn).
-
-Otras presentes:
-- Scatterplot (numérica + numérica); cada punto = un dato, ver correlación o dispersión
-- Pie chart (1 categoría → proporción del total); ideal para ver distribuciones relativas, no para comparar valores exactos.
-
-**Hallazgos relevantes**
-
-- Fuerte estacionalidad:
-  - Picos de reservas en verano (junio–agosto) y en diciembre.
-  - Mínimos en enero y febrero.
-- Ontario y British Columbia concentran la mayor cantidad de clientes.
-- Los clientes casados representan el grupo más numeroso.
-- La tarjeta **Star** concentra la mayoría de clientes.
-
-**Conclusión**  
-✔ Las visualizaciones refuerzan los resultados obtenidos en la estadística descriptiva.
+✔ Conclusión: permiten segmentar y comprender la composición de la clientela.
 
 ---
 
-### Fase 6 — Evaluación de Diferencias Significativas
+### 3.4 Fase 3 — Visualización de Datos
 
-**Objetivo**  
-- Se busca evaluar si existen diferencias significativas con el número de vuelos reservados según el nivel educativo de los clientes.
+**Objetivo:** Detectar patrones y tendencias gráficas.
 
-**Conclusiones**
+- **Tipos de gráficos:**  
+  - Barplot horizontal → muchas categorías / nombres largos  
+  - Barplot agrupado → subcategorías (hue)  
+  - Scatterplot → correlación entre variables numéricas  
+  - Pie chart → proporción relativa de categorías  
 
-- El nivel educativo **no parece influir de forma significativa** en la cantidad de vuelos reservados.
-- El comportamiento de reserva es bastante homogéneo entre los distintos niveles educativos.
-
----
-
-## Estructura del Repositorio
-
-- **README.md:** documentación del proyecto.  
-- **pdf_evaluacion_final.pdf:** enunciado del ejercicio.  
-- **evaluacion-final-eaguilothio.ipynb:** notebook principal con el análisis completo.  
-- **data/:** carpeta con los archivos CSV utilizados.
+- **Hallazgos:**  
+  - Estacionalidad → picos en verano y diciembre, mínimos en enero/febrero  
+  - Ontario y British Columbia → mayor concentración de clientes  
+  - Clientes casados → grupo más numeroso  
+  - Tarjeta **Star** → mayoría de clientes  
 
 ---
 
-## Librerías Principales
+### 3.5 Fase 4 — Evaluación de Diferencias por Nivel Educativo
+
+**Objetivo:** Evaluar diferencias en número de vuelos según nivel educativo.
+
+- El nivel educativo **no parece influir significativamente** en cantidad de vuelos.  
+- El comportamiento de reserva es bastante homogéneo entre niveles educativos.  
+
+---
+
+## 4. Estructura del Repositorio
+
+- **README.md:** documentación del proyecto  
+- **pdf_evaluacion_final.pdf:** enunciado del ejercicio  
+- **evaluacion-final-eaguilothio.ipynb:** notebook principal con el análisis completo  
+- **data/**: carpeta con los archivos CSV utilizados  
+
+---
+
+## 5. Librerías Principales
 
 ### Manipulación y análisis de datos
-- **pandas** → Carga, limpieza y análisis de datos tabulares.
-- **numpy** → Cálculos numéricos y manejo de valores faltantes (`NaN`).
-- **os** → Gestión de rutas y carga de archivos.
+
+- **pandas** → carga, limpieza y análisis de datos tabulares  
+- **numpy** → cálculos numéricos y manejo de valores faltantes (`NaN`)  
+- **os** → gestión de rutas y carga de archivos  
 
 ### Visualización
-- **matplotlib** → Gráficos con alto nivel de personalización.
-- **seaborn** → Visualizaciones estadísticas claras basadas en matplotlib.
+
+- **matplotlib** → gráficos personalizables  
+- **seaborn** → visualizaciones estadísticas basadas en matplotlib  
 
 
 
