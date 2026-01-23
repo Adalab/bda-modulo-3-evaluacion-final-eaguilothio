@@ -16,7 +16,7 @@
    3. [Integración de Datos](#integración-de-datos)  
    4. [Fase 2 — Análisis Estadístico Descriptivo](#fase-2--análisis-estadístico-descriptivo)  
    5. [Fase 3 — Visualización de Datos](#fase-3--visualización-de-datos)  
-   6. [Fase 4 — Evaluación de Diferencias por Nivel Educativo](#fase-6--evaluación-de-diferencias-por-nivel-educativo)  
+   6. [Fase 4 — Evaluación de Diferencias por Nivel Educativo](#fase-6--evaluación--de-- diferencias--significativas)  
 4. [Estructura del Repositorio](#estructura-del-repositorio)  
 5. [Librerías Principales](#librerías-principales)
 
@@ -188,10 +188,10 @@ Otras presentes:
 
 ---
 
-### Fase 6 — Evaluación de Diferencias por Nivel Educativo
+### Fase 6 — Evaluación de Diferencias Significativas
 
 **Objetivo**  
-Analizar si el nivel educativo influye en el número de vuelos reservados.
+- Se busca evaluar si existen diferencias significativas con el número de vuelos reservados según el nivel educativo de los clientes.
 
 **Conclusiones**
 
