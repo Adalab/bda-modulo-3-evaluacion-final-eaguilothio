@@ -88,5 +88,13 @@ Aquí se evalúan diferencias entre grupos y se investiga si una característica
 
 ## Librerías Principales
 
-- **pandas** y **numpy**: manipulación y análisis de datos tabulares  
-- **matplotlib** y **seaborn**: visualización de datos
+### Manipulación y análisis de datos
+- **pandas** → Para trabajar con datos en forma de tabla (similar a Excel). Permite cargar, limpiar y analizar información.
+- **numpy** → Para cálculos numéricos rápidos y para manejar valores faltantes (`nan`), que es un valor numérico especial.
+- **os** → Para comprobar rutas y cargar archivos sin errores.
+
+### Visualización
+- **matplotlib** → Crea gráficos con mucho control sobre cada detalle. Es flexible, pero más complejo y requiere más código.
+- **seaborn** → Facilita la creación de gráficos claros y rápidos usando matplotlib por debajo. Ideal para análisis exploratorio.
+
+
