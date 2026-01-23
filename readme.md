@@ -50,4 +50,4 @@ Obtener insights relevantes y reflexiones en cada fase del proceso de análisis 
 
 ## Documentos necesarios para el proyecto
 - `evaluacion-final-eaguilothio.ipynb`: notebook principal con el análisis completo  
-- `data/`: carpeta que contiene los archivos CSV empleados 
+- `data/`: carpeta que contiene los archivos CSV 
