@@ -16,7 +16,7 @@
    3. [Fase 3 — Visualización de Datos](#fase-3—visualización-de-datos)  
    4. [Fase 4 — Evaluación de Diferencias en Reservas de Vuelos por Nivel Educativo](#fase-4—evaluación-de-diferencias-en-reservas-de-vuelos-por-nivel-educativo)  
 4. [Estructura del Repositorio](#estructura-del-repositorio)  
-5. [Tecnologías y Librerías](#tecnologías-y-librerías)
+5. [Librerías Principales](#tecnologías-y-librerías)
 
 ---
 
@@ -86,7 +86,7 @@ Aquí se evalúan diferencias entre grupos y se investiga si una característica
 
 ---
 
-## Librerías principales
+## Librerías Principales
 
 - **pandas** y **numpy**: manipulación y análisis de datos tabulares  
 - **matplotlib** y **seaborn**: visualización de datos
